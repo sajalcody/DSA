@@ -1,0 +1,20 @@
+There can be two cases 
+
+1. we need smallest lexicographically smallest element
+   
+   Here, we will have to sort the array => O(nlogn)
+
+   then we can swap pairs => n
+
+   total is nlogn
+
+2. we can tell any wave array.
+
+this can be done in O(n) complexity
+
+  1. take 3 elements at a time and bring smallest in middle. leave first two elements and start again from 3rd element
+
+  2. https://www.geeksforgeeks.org/sort-array-wave-form-2/  or   https://codingblocks.com/resources/wave-sort/
+
+
+Practice: https://www.interviewbit.com/problems/wave-array/

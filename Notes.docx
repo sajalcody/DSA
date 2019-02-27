@@ -1,0 +1,2 @@
+g++ map.cpp  -std=c++11
+g++ --version
