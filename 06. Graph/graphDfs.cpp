@@ -33,15 +33,17 @@ T:O(|V|+|E|) -> For Adjacency List(dfsSTL)
 S:O(|V|)
 */
 
-void dfsSTL(int v, bool visited[], vector<int> g[]){
-    visited[v] = true;
-    cout << v << " -> ";
-    for(int x : g[v]){
+// Function to start DFS from a given source
+void dfsSTL(int source, bool visited[], vector<int> g[]){
+    visited[source] = true;
+    cout << source << " -> ";
+    for(int x : g[source]){
         if(!visited[x])
             dfsSTL(x, visited, g);
     }
 }
 
+// Call DFS for every unvisited vertex
 void dfsTraversalSTL(int v, vector <int> g[]){ 
     bool visited[v];
     memset(visited, false, sizeof(visited));
@@ -107,27 +109,6 @@ void callDfsMat(){
   dfsTraversalMat(v, g);
 }
 
-//[TODO]
-/* Graph DFS ADJACENCY MATRIX USING STRUCT
-calling func: dfsTraversalMat
-util func: dfs
-T:O() -> For Adjacency Matrix
-S:O(|V|) -> For visited array
-
-void dfs(int v, bool visited[], listNode **g){
-    visited[v] = true;
-    cout << v << " -> ";
-    listNode *head = g[v];
-    while(head){
-        if(!visited[head -> vertex]){
-            visited[head -> vertex] = true;
-            dfs(head -> vertex, visited, g);
-        }
-        head = head -> next;
-    }
-}
-*/
-
 int main(){
     callDfsAdjSTL();
     callDfsMat();
@@ -154,4 +135,25 @@ for v=5
 3 4 
 4 2 
 3 1
+*/
+
+//[TODO]
+/* Graph DFS ADJACENCY MATRIX USING STRUCT
+calling func: dfsTraversalMat
+util func: dfs
+T:O() -> For Adjacency Matrix
+S:O(|V|) -> For visited array
+
+void dfs(int v, bool visited[], listNode **g){
+    visited[v] = true;
+    cout << v << " -> ";
+    listNode *head = g[v];
+    while(head){
+        if(!visited[head -> vertex]){
+            visited[head -> vertex] = true;
+            dfs(head -> vertex, visited, g);
+        }
+        head = head -> next;
+    }
+}
 */
